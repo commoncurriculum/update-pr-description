@@ -17,6 +17,8 @@ inputs:
   destination_branch:
     description: 'Base branch of the PR. Default is master.'
     default: master
+  source_branch:
+    description: 'Source branch'
 branding:
   icon: git-pull-request
   color: green
