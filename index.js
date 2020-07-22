@@ -6,11 +6,12 @@ async function run() {
     githubToken: core.getInput("github_token", { required: true }),
     prTitle: core.getInput("pr_title"),
     prBody: core.getInput("pr_body"),
-    destinationBranch: core.getInput("destination_branch")
-  };
+    destinationBranch: core.getInput("destination_branch"),
+    sourceBranch: core.getInput("source_branch")
+};
 
   const base = inputs.destinationBranch;
-  const source = github.context.ref.replace(/^refs\/heads\//, "");
+  const source = inputs.sourceBranch;
 
   const octokit = new github.GitHub(inputs.githubToken);
 
